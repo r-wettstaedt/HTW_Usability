@@ -1,0 +1,17 @@
+<div class="container">
+    <br>
+    <br>
+    <h1 class="header center orange-text">Welcome to SLS</h1>
+    <div class="row center">
+        <h5 class="header col s12 light">Your Language School</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row center">
+        <h4>Select your language:</h4>
+        <a href="#" ng-click="routing()" ng-repeat="country in countries">
+            <img class="flag waves-effect waves-light btn" ng-src="images/icon-{{country}}.png" alt="{{country}}">
+        </a>
+    </div>
+</div>
