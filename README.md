@@ -7,4 +7,6 @@ Used Frameworks:
 * [AngularJS](https://angularjs.org)
 
 
-*No setup needed*
+*You need to disable same origin policy in Chrome:*
+
+`open -a Google\ Chrome --args --disable-web-security`
