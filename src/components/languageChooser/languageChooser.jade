@@ -1,0 +1,15 @@
+.language-chooser
+    
+    .container
+        br
+        br
+        h1.header.center.orange-text Welcome to SLS
+        
+        .row.center
+            h5.header.col.s12.light Your Language School
+
+    .container
+        .row.center
+            h4 Select your language:
+            a(href='#', ng-click='routing()', ng-repeat='country in countries')
+                img.flag.waves-effect.waves-light.btn(ng-src='images/icon-{{country}}.png', alt='{{country}}')
