@@ -1,5 +1,8 @@
 angular.module "usability"
-  .controller "MainCtrl", ($scope) ->
+  .controller "MainCtrl", ['$scope', '$rootScope', ( $scope, $rootScope ) ->
+
+    $scope.languageChooserIsVisible = true
+
     $scope.awesomeThings = [
       {
         'title': 'AngularJS',
@@ -71,3 +74,8 @@ angular.module "usability"
     ]
     angular.forEach $scope.awesomeThings, (awesomeThing) ->
       awesomeThing.rank = Math.random()
+
+    $rootScope.$on 'languageChooserIsVisible', ( event, isVisible ) ->
+      $scope.languageChooserIsVisible = isVisible
+
+]

@@ -1,8 +1,6 @@
-div(layout='vertical', layout-fill)
+div(layout='vertical', layout-fill, ng-class='{blur : languageChooserIsVisible}')
 
   header(ng-include='"components/navbar/navbar.html"')
-
-  div(language-chooser='')
 
   md-content
     section.jumbotron
@@ -28,3 +26,5 @@ div(layout='vertical', layout-fill)
     md-toolbar(layout='row', layout-align='center center')
       p With ♥ from 
         a(href='https://twitter.com/Swiip') @Swiip
+
+div(language-chooser)

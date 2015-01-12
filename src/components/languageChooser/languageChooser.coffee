@@ -1,5 +1,5 @@
 angular.module "usability"
-    .directive 'languageChooser', [ ->
+    .directive 'languageChooser', [ '$rootScope', ( $rootScope ) ->
 
         restrict: 'A'
 
@@ -12,5 +12,6 @@ angular.module "usability"
 
             scope.close = ->
                 scope.isVisible = false
+                $rootScope.$broadcast 'languageChooserIsVisible', scope.isVisible
 
 ]
