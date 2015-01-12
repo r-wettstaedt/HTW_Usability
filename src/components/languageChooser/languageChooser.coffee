@@ -1,5 +1,5 @@
 angular.module "usability"
-    .directive 'languageChooser', [ '$rootScope', ( $rootScope ) ->
+    .directive 'languageChooser', [ '$rootScope', '$timeout', ( $rootScope, $timeout ) ->
 
         restrict: 'A'
 
@@ -11,7 +11,10 @@ angular.module "usability"
             scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
 
             scope.close = ->
-                scope.isVisible = false
-                $rootScope.$broadcast 'languageChooserIsVisible', scope.isVisible
+                scope.transition = true
+                $rootScope.$broadcast 'languageChooserIsVisible', false
+                $timeout ->
+                    scope.isVisible = false
+                , 500
 
 ]
