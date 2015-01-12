@@ -1,15 +1,10 @@
-.language-chooser
-    
-    .container
-        br
-        br
-        h1.header.center.orange-text Welcome to SLS
-        
-        .row.center
-            h5.header.col.s12.light Your Language School
+.language-chooser(layout='vertical', layout-align='center center', ng-if='isVisible')
 
-    .container
-        .row.center
-            h4 Select your language:
-            a(href='#', ng-click='routing()', ng-repeat='country in countries')
-                img.flag.waves-effect.waves-light.btn(ng-src='images/icon-{{country}}.png', alt='{{country}}')
+    section
+        h1 Welcome to SLS
+        h5 Your Language School
+
+    section
+        h4 Select your language:
+        div(layout='row' layout-align='center center')
+            img.flag(ng-repeat='country in countries', ng-src='assets/images/icon-{{country}}.png', alt='{{country}}', ng-click='close()')

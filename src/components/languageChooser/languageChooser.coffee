@@ -1,7 +1,16 @@
-window.App.directive 'languageChooser', [ ->
+angular.module "usability"
+    .directive 'languageChooser', [ ->
 
-    restrict: 'A'
+        restrict: 'A'
 
-    link: ( scope, element, attrs ) ->
+        templateUrl: './components/languageChooser/languageChooser.html'
 
-        scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
+        link: ( scope, element, attrs ) ->
+
+            scope.isVisible = true
+            scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
+
+            scope.close = ->
+                scope.isVisible = false
+
+]
