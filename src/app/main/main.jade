@@ -1,30 +1,27 @@
 div(layout='vertical', layout-fill, ng-class='{blur : languageChooserIsVisible}')
 
-  header(ng-include='"components/navbar/navbar.html"')
+section(layout='row', flex='')
+    md-sidenav.md-sidenav-left.md-whiteframe-z2(component-id='left', is-locked-open="$media('min-width: 768px')")
+      md-toolbar.md-theme-indigo
+        h1.md-toolbar-tools Sidenav Left
 
-  md-content
-    section.jumbotron
-      h1 'Allo, 'Allo!
-      p.lead
-        img(src='assets/images/yeoman.png', alt='Im Yeoman')
-        br
-        | Always a pleasure scaffolding your apps.
-      p
-        a.btn(ng-href='#') Splendid!
+      md-content.md-padding(ng-controller='LeftCtrl')
+        md-button.md-primary(ng-click='close()', hide-gt-md='') Close Sidenav Left
 
-    .techs(layout-align='center')
-      md-card(ng-repeat='awesomeThing in awesomeThings | orderBy:"rank"')
-        .thumbnail
-          img.pull-right(ng-src='assets/images/{{awesomeThing.logo}}', alt='{{awesomeThing.title}}')
-          .caption
-            h3 {{awesomeThing.title}}
-            p {{awesomeThing.description}}
-            p
-              a(ng-href='{{awesomeThing.url}}') {{awesomeThing.url}}
+        p(hide-md='', show-gt-md='').
+          This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
+
+    md-content.md-padding(flex='')
+      div(layout='column', layout-fill='', layout-align='center center')
+        p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
+
 
   footer
     md-toolbar(layout='row', layout-align='center center')
-      p With ♥ from 
+      p With ♥ from
         a(href='https://twitter.com/Swiip') @Swiip
+
+    div
+      md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
 
 div(language-chooser)
