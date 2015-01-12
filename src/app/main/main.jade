@@ -1,5 +1,3 @@
-div(layout='vertical', layout-fill, ng-class='{blur : languageChooserIsVisible}')
-
 section(layout='row', flex='')
     md-sidenav.md-sidenav-left.md-whiteframe-z2(component-id='left', is-locked-open="$media('min-width: 768px')")
       md-toolbar.md-theme-indigo
@@ -14,14 +12,6 @@ section(layout='row', flex='')
     md-content.md-padding(flex='')
       div(layout='column', layout-fill='', layout-align='center center')
         p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
-
-
-  footer
-    md-toolbar(layout='row', layout-align='center center')
-      p With ♥ from
-        a(href='https://twitter.com/Swiip') @Swiip
-
-    div
-      md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
+        md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
 
 div(language-chooser)
