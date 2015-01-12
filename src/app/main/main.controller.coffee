@@ -2,6 +2,7 @@ angular.module 'usability'
 
 .controller 'MainCtrl', ( $rootScope, $scope, $timeout, $mdSidenav, $log ) ->
 
+    $scope.languageChooserIsVisible = true
     $rootScope.$on 'languageChooserIsVisible', ( event, isVisible ) ->
         $scope.languageChooserIsVisible = isVisible
 
