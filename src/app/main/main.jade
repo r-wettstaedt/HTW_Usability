@@ -1,13 +1,18 @@
 section.blur(layout='row', flex='', ng-class='{ "blur-transition" : !languageChooserIsVisible }')
     md-sidenav.md-sidenav-left.md-whiteframe-z2(component-id='left', is-locked-open="$media('min-width: 768px')")
-      md-toolbar.md-theme-indigo
-        h1.md-toolbar-tools Sidenav Left
+        md-toolbar.md-theme-indigo
+            h1.md-toolbar-tools Sidenav Left
 
-      md-content.md-padding(ng-controller='LeftCtrl')
-        md-button.md-primary(ng-click='close()', hide-gt-md='') Close Sidenav Left
+        md-content.md-padding
+            div(ng-repeat="section in sections")
+                button.menu-item.menu-title.md-menu-item(ng-click="toggleSelectSection(section)", md-highlight="isSectionSelected(section)", md-ink-ripple="#bbb") {{section.name}}
 
-        p(hide-md='', show-gt-md='').
-          This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
+                a.menu-item.menu-sub-item.md-menu-item(ng-show="isSectionSelected(section)", ng-repeat="page in section.pages", ng-href="#{{page.url}}", md-highlight="isPageSelected(section, page)", md-ink-ripple="#bbb"): span {{page.name}}
+
+        //- md-button.md-primary(ng-click='close()', hide-gt-md='') Close Sidenav Left
+
+        //- p(hide-md='', show-gt-md='').
+        //-   This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
 
     md-content.md-padding(flex='')
       div(layout='column', layout-fill='', layout-align='center center')

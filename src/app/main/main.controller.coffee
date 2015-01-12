@@ -11,9 +11,50 @@ angular.module 'usability'
         $mdSidenav('left').toggle()
 
 
-.controller 'LeftCtrl', ( $scope, $timeout, $mdSidenav, $log ) ->
+    $scope.sections = [{
+        name: 'Kurse',
+        pages: [{
+              name: 'Deutsch',
+              id: 'DE',
+              url: '/'
+            },{
+              name: 'Englisch',
+              id: 'EN',
+              url: '/'
+            }
+        ] }, {
+            name: 'Sprachreisen',
+            pages: []
+        }, {
+            name: 'Eventkalender',
+            pages: []
+        }, {
+            name: 'Standortübersicht',
+            pages: []
+        }, {
+            name: 'Einstufungstest',
+            pages: []
+        }, {
+            name: 'Zertifikate',
+            pages: []
+        }, {
+            name: 'FAQ',
+            pages: []
+    }]
 
-    $scope.close = ->
+    $scope.selectSection = (section) ->
+        $scope.openedSection = section
 
-        $mdSidenav('left').close()
+    $scope.toggleSelectSection = (section) ->
+        $scope.openedSection = if $scope.openedSection is section then null else section
 
+    $scope.isSectionSelected = (section) ->
+        $scope.openedSection is section
+
+    $scope.selectPage = (section, page) ->
+        page && page.url && $location.path(page.url)
+        $scope.currentSection = section
+        $scope.currentPage = page
+
+    $scope.isPageSelected = (section, page) ->
+        $scope.currentPage is page
