@@ -1,0 +1,15 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "name": "root",
+            "file_exclude_patterns": [
+                "*.bowerrc",
+                "*.yo-rc",
+                "*.editorconfig",
+                "*.toc",
+            ]
+        }
+    ]
+}
