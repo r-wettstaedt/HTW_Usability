@@ -7,7 +7,7 @@ angular.module "usability"
 
         link: ( scope, element, attrs ) ->
 
-            scope.isVisible = true
+            scope.isVisible = false
             scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
 
             scope.close = ->
