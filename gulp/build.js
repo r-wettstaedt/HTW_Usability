@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var nib = require('nib');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -8,7 +9,7 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('styles', ['wiredep', 'injector:css:preprocessor'], function () {
   return gulp.src(['src/app/index.styl', 'src/app/vendor.styl'])
-    .pipe($.stylus())
+    .pipe($.stylus({use: [nib()]}))
     .on('error', function handleError(err) {
       console.error(err.toString());
       this.emit('end');
