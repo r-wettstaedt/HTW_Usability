@@ -1,0 +1,10 @@
+.language-chooser(layout='vertical', layout-align='center center', ng-class='{ "opacity-transition" : transition }' ng-if='isVisible')
+
+    section
+        h1 Welcome to SLS
+        h5 Your Language School
+
+    section
+        h4 Select your language:
+        div(layout='row' layout-align='center center')
+            img.flag(ng-repeat='country in countries', ng-src='assets/images/icon-{{country}}.png', alt='{{country}}', ng-click='close()')
