@@ -1,9 +1,30 @@
-angular.module "angular", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap']
-  .config ($routeProvider) ->
-    $routeProvider
-      .when "/",
-        templateUrl: "app/main/main.html"
-        controller: "MainCtrl"
-      .otherwise
-        redirectTo: "/"
+class AppView extends Backbone.View
 
+    el: 'body'
+
+    events:
+        "click ul.nav a" : 'handleNavigation'
+
+    initialize: ->
+        console.log this
+        _.bindAll @, "handleNavigation"
+        @render("main")
+
+
+    render: ( template, options = {} ) ->
+
+        $.get "./components/#{template}.html", ( data ) ->
+            template = _.template data , options
+
+            $('#content').html template
+
+
+    handleNavigation : ( e ) ->
+
+        view = e.currentTarget.getAttribute("data-view")
+        if view
+            @render view
+
+
+
+window.AppView = new AppView()

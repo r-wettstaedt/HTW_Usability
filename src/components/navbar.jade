@@ -1,0 +1,28 @@
+header.header-20
+    .container
+        .row
+            .navbar.col-sm-12(role='navigation')
+                .navbar-header
+                    button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click="$('html').toggleClass('nav-visible')")
+
+                    a.brand(href='#')
+                        img(src='./assets/images/icons/Infinity-Loop@2x.png', width='50', height='50', alt='')
+                        |  Startup
+
+                .navbar-collapse.collapse.pull-right
+                    ul.nav
+                        li.active
+                            a(href='#') Home
+
+                        li
+                            a(href='#') Blog
+
+                        li
+                            a(href='#') Portfolio
+
+                        li
+                            a(href='#') Contact
+
+
+
+    .header-background
