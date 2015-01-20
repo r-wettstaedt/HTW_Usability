@@ -7,14 +7,13 @@ angular.module "angular"
 
         link: ( scope, element, attrs ) ->
 
-            scope.isVisible = true
+            $rootScope.languageChooserIsVisible = true
             scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
 
             scope.close = ->
                 scope.transition = true
-                $rootScope.$broadcast 'languageChooserIsVisible', false
                 $timeout ->
-                    scope.isVisible = false
+                    $rootScope.languageChooserIsVisible = false
                 , 500
 
 ]

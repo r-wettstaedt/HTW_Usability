@@ -1,4 +1,4 @@
-.container
+.container.blur(ng-class='{ "blur-transition" : !languageChooserIsVisible }')
 
     .jumbotron.text-center
       h1 &apos;Allo, &apos;Allo!
@@ -24,7 +24,6 @@
             p
               a(ng-href='{{awesomeThing.url}}') {{awesomeThing.url}}
 
-    div(language-chooser)
 
     hr
 
@@ -32,3 +31,7 @@
       p
         | With &hearts; from
         a(href='https://twitter.com/Swiip') @Swiip
+
+div
+  | languageChooserIsVisible {{languageChooserIsVisible}}
+div(language-chooser)
