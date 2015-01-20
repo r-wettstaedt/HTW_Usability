@@ -7,7 +7,7 @@ angular.module "angular"
 
         link: ( scope, element, attrs ) ->
 
-            $rootScope.languageChooserIsVisible = true
+            $rootScope.languageChooserIsVisible = false
             scope.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
 
             scope.close = ->
