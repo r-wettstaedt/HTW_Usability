@@ -8,7 +8,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+
+
+    <link rel="stylesheet" href="./assets/styles/bootstrap.css">
+    <link rel="stylesheet" href="./assets/styles/prettify.css">
+      <link rel="stylesheet" href="./assets/styles/flat-ui.css">
+      <link rel="stylesheet" href="./assets/styles/flat-ui-12.css">
     <!-- bower:css -->
     <!-- run `gulp wiredep` to automaticaly populate bower styles dependencies -->
     <!-- endbower -->
@@ -25,8 +30,76 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-include="'components/navbar/navbar.html'"></div>
-    <div ng-view></div>
+    <div class="page-wrapper">
+        <!-- header-20 -->
+        <header class="header-20">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar col-sm-12" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle"></button>
+                            <a class="brand" href="#">
+                                <img src="./assets/images/icons/Infinity-Loop@2x.png" width="50" height="50" alt=""> SLS Sprachschule
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse pull-right">
+                            <ul class="nav">
+                                <li class="active"><a data-view="main" href="#">Home</a></li>
+                                <li><a data-view="standorte" href="#">Standorte</a></li>
+                                <li><a data-view="kalendar" href="#">Eventkalendar</a></li>
+                                <li><a data-view="sprachreisen" href="#">Sprachreisen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-background"></div>
+        </header>
+        <div id="content">
+
+        </div>
+
+
+        <!-- footer-11 -->
+        <footer class="footer-11">
+            <div class="container">
+                <a class="brand" href="#"><img src="./assets/images/icons/infinity-bw@2x.png" width="42" height="21" alt=""></a>
+                <div class="social-btns">
+                    <a href="#"><div class="fui-vimeo"></div><div class="fui-vimeo"></div></a>
+                    <a href="#"><div class="fui-facebook"></div><div class="fui-facebook"></div></a>
+                    <a href="#"><div class="fui-twitter"></div><div class="fui-twitter"></div></a>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a data-view="home" href="#">Home</a>
+                        </li>
+                        <li>
+                            <a data-view="standorte" href="#">Standorte</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="additional-links">
+                <div class="container">
+                    <p class="lead">
+                        <b>200,000</b> users registered since January
+                    </p>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Affiliate Program</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -38,15 +111,20 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
+
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp wiredep` to automaticaly populate bower script dependencies -->
+    <script src="./assets/scripts/bootstrap.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <script src="./assets/scripts/flat-ui.js"></script>
+    <script src="./assets/scripts/startup-kit.js"></script>
     <!-- inject:js -->
     <!-- js files will be automaticaly insert here -->
+
     <!-- endinject -->
 
     <!-- inject:partials -->
