@@ -1,0 +1,13 @@
+<% for( var i=0; i < people.length; i++ ){ p = people[i] %>
+
+<div class="row">
+    <div class="face">
+        <img src="<%= p.photo %>" alt=""/>
+        <blockquote>
+            <p><%= p.quote %></p>
+            <footer><%= p.name %></footer>
+        </blockquote>
+    </div>
+</div>
+
+<% } %>

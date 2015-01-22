@@ -11,7 +11,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         _.bindAll @, "handleNavigation"
 
 
-        @render "main"
+        @render 'main'
 
         @lc = new Usability.Views.LanguageChooserView()
         @lc.on 'language', ( country ) ->
@@ -34,6 +34,11 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         if view is 'faq'
             new Usability.Views.FaqView()
 
+        _.defer ->
+            for el in $(".faces-widget")
+                new Usability.Widgets.FacesWidget el : el
+
+
     handleNavigation : ( e ) ->
 
         $('ul.nav a.active').removeClass "active"
@@ -45,5 +50,5 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
             @render view
 
 
-
-window.Usability.App = new AppView()
+$ ->
+    window.Usability.App = new AppView()
