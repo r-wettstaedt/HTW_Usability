@@ -121,6 +121,8 @@ class LanguageChooserView extends Backbone.View
 
     initialize: ->
 
+        @$el.remove()
+
         $.get "./components/languageChooser.html", ( data ) =>
             @template = _.template data
             @show()
