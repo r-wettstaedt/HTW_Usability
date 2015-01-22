@@ -24,8 +24,8 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
         @template.done ( tmpl ) =>
             @data = @states[@selectedState]
             @data.getCountryFromCode = @getCountryFromCode
+            @data.languages = @languages
             @$el.html (_.template tmpl) @data
 
     getCountryFromCode: ( code ) ->
-        console.log @languages
         @languages[code]
