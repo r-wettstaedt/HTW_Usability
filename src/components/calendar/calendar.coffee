@@ -38,6 +38,7 @@ window.Usability.Views.CalendarView = class CalendarView extends Backbone.View
 
             return true
 
+        events
 
 
     setFilter: ( newFilter ) =>
