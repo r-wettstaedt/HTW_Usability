@@ -8,22 +8,21 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
 
     events:
         'click [data-key]': 'selectLocation'
-    data:
-        selectedState: ''
 
     initialize: ->
         @render()
+        @info = new Usability.Views.LocationsInfoView()
 
     render: ->
         @template.done ( tmpl ) =>
-            console.log "now"
-            @$el.html (_.template tmpl) @data
+            @$el.html (_.template tmpl) {}
             @initMapster()
 
 
     selectLocation: ( e ) ->
         state = e.currentTarget.getAttribute 'data-key'
-        @data.selectedState = state
+        @info.selectedState = state
+        @info.render()
 
 
     initMapster: ->
