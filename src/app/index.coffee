@@ -107,20 +107,24 @@ class LocationsView extends Backbone.View
 
     template: $.get "./app/standorte.html"
 
-    events: 
+    events:
         'click [data-key]': 'selectLocation'
+    data:
+        selectedState: ''
 
-    initialize: -> @render()
+    initialize: ->
+        @render()
 
     render: ->
         @template.done ( tmpl ) =>
             console.log "now"
-            @$el.html (_.template tmpl), {}
+            @$el.html (_.template tmpl) @data
             @initMapster()
 
 
     selectLocation: ( e ) ->
-        console.log e.currentTarget.getAttribute 'data-key'
+        state = e.currentTarget.getAttribute 'data-key'
+        @data.selectedState = state
 
 
     initMapster: ->
@@ -172,7 +176,7 @@ class LanguageChooserView extends Backbone.View
         @trigger 'language', e.currentTarget.getAttribute("alt")
 
 
-class BlurView extends Backbone.View 
+class BlurView extends Backbone.View
 
     el: '.page-wrapper'
 
