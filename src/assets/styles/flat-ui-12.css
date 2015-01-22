@@ -17,7 +17,7 @@ textarea {
     font-size: 14px;
 }
 a {
-    color: #16a085;
+    color: #3498db;
     text-decoration: none;
     -webkit-transition: color 0.25s, background 0.25s;
     -moz-transition: color 0.25s, background 0.25s;
@@ -225,7 +225,7 @@ footer {
     background-color: #3498db;
 }
 .bg-green-sea {
-    background-color: #16a085;
+    background-color: #3498db;
 }
 .bg-emerland {
     background-color: #2ecc71;
@@ -303,7 +303,7 @@ footer {
     border-style: solid;
 }
 .bordered.bg-turquoise {
-    border-color: #16a085;
+    border-color: #3498db;
 }
 .bordered.bg-emerland {
     border-color: #27ae60;
