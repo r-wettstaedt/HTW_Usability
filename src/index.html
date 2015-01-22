@@ -8,12 +8,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-
-
     <link rel="stylesheet" href="./assets/styles/bootstrap.css">
     <link rel="stylesheet" href="./assets/styles/prettify.css">
-      <link rel="stylesheet" href="./assets/styles/flat-ui.css">
-      <link rel="stylesheet" href="./assets/styles/flat-ui-12.css">
+    <link rel="stylesheet" href="./assets/styles/flat-ui.css">
+    <link rel="stylesheet" href="./assets/styles/flat-ui-12.css">
     <!-- bower:css -->
     <!-- run `gulp wiredep` to automaticaly populate bower styles dependencies -->
     <!-- endbower -->
@@ -45,13 +43,13 @@
                                 <img src="./assets/images/icons/Infinity-Loop@2x.png" width="50" height="50" alt=""> SLS Sprachschule
                             </a>
                         </div>
-                        <div class="navbar-collapse collapse pull-right">
+                        <div class="navbar-collapse collapse pull-right" id="top-nav">
                             <ul class="nav">
-                                <li><a class="active" data-view="main" href="#">Home</a></li>
-                                <li><a data-view="locations" href="#">Standorte</a></li>
-                                <li><a data-view="events" href="#">Eventkalender</a></li>
-                                <li><a data-view="trips" href="#">Sprachreisen</a></li>
-                                <li><a data-view="faq" href="#">FAQ</a></li>
+                                <li><a class="nav-link active" data-view="main" href="#">Home</a></li>
+                                <li><a class="nav-link" data-view="locations" href="#">Standorte</a></li>
+                                <li><a class="nav-link" data-view="events" href="#">Eventkalender</a></li>
+                                <li><a class="nav-link" data-view="trips" href="#">Sprachreisen</a></li>
+                                <li><a class="nav-link" data-view="faq" href="#">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,18 +72,8 @@
                     <a href="#"><div class="fui-twitter"></div><div class="fui-twitter"></div></a>
                 </div>
 
-                <nav>
-                    <ul>
-                        <li>
-                            <a data-view="home" href="#">Home</a>
-                        </li>
-                        <li>
-                            <a data-view="standorte" href="#">Standorte</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
+                <nav id="bottom-nav">
+                    <ul></ul>
                 </nav>
             </div>
             <div class="additional-links">
@@ -93,6 +81,7 @@
                     <p class="lead">
                         <b>200,000</b> users registered since January
                     </p>
+
                     <a href="#">Terms &amp; Conditions</a>
                     <a href="#">Privacy Policy</a>
                     <a href="#">Advertise</a>
