@@ -16,6 +16,15 @@
     background-color: black
 
 
+// Select through id to overwrite flat-ui stuff without !important
+#top-nav .nav-link, #bottom-nav .nav-link
+    color: #bdc3c7
+
+    &.active, &:active, &:hover, &:focus
+        color: #3498db
+
+
+
 .row + .row
     margin-top: 20px
 

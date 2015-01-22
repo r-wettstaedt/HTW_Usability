@@ -5,7 +5,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
     el: 'body'
 
     events:
-        "click ul.nav a" : 'handleNavigation'
+        "click a.nav-link" : 'handleNavigation'
 
     initialize: ->
         _.bindAll @, "handleNavigation"
@@ -15,6 +15,12 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @lc = new Usability.Views.LanguageChooserView()
         @lc.on 'language', ( country ) ->
+
+
+        # Setup bottom navigation
+        clone = $('#top-nav > ul').clone()
+        $('#bottom-nav').append( clone ).find('ul').removeClass "nav"
+
 
 
     render: ( view ) ->
@@ -41,10 +47,13 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
     handleNavigation : ( e ) ->
 
-        $('ul.nav a.active').removeClass "active"
+        $links = $('a.nav-link')
+        $links.removeClass "active"
 
         view = e.currentTarget.getAttribute("data-view")
-        e.currentTarget.classList.add "active"
+
+        for l in $links when l.getAttribute("data-view") is view
+            l.classList.add "active"
 
         if view
             @render view
