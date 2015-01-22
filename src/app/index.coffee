@@ -41,7 +41,10 @@ class AppView extends Backbone.View
 
     handleNavigation : ( e ) ->
 
+        $('ul.nav a.active').removeClass "active"
+
         view = e.currentTarget.getAttribute("data-view")
+        e.currentTarget.classList.add "active"
         console.log "clicked ", view
         if view
             @render view
