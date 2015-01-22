@@ -13,9 +13,10 @@ class AppView extends Backbone.View
         @render "main", =>
             @initMainPage()
 
+            blur = new BlurView()
             lc = new LanguageChooserView()
             lc.on 'language', ( country ) ->
-                console.log country
+                blur.disappear()
 
 
     render: ( template, options = {}, cb ) ->
@@ -150,9 +151,24 @@ class LanguageChooserView extends Backbone.View
         @trigger 'language', e.currentTarget.getAttribute("alt")
 
 
+class BlurView extends Backbone.View 
 
+    el: '.page-wrapper'
 
+    template : null
 
+    initialize: ->
+
+        # $(@el).addClass 'blur'
+        console.log "render blur"
+
+    disappear: ->
+
+        $(@el).addClass 'blur-transition'
+        setTimeout ->
+            $(@el).removeClass 'blur'
+            $(@el).removeClass 'blur-transition'
+        , 500
 
 
 window.AppView = new AppView()
