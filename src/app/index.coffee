@@ -10,7 +10,6 @@ class AppView extends Backbone.View
         _.bindAll @, "handleNavigation"
 
 
-
         @render "main", =>
             @initMainPage()
 
@@ -20,19 +19,22 @@ class AppView extends Backbone.View
         if typeof options is 'function'
             cb = options
 
-        $.get "./components/#{template}.html", ( data ) ->
-            template = _.template data , options
+        console.log "trying to render #{template}"
+        if template is 'standorte'
+            new LocationsView()
 
-            $('#content').html template
-            cb?()
-
-
+#        $.get "./components/#{template}.html", ( data ) ->
+#            template = _.template data , options
+#
+#            $('#content').html template
+#            cb?()
 
 
 
     handleNavigation : ( e ) ->
 
         view = e.currentTarget.getAttribute("data-view")
+        console.log "clicked ", view
         if view
             @render view
 
@@ -45,11 +47,11 @@ class AppView extends Backbone.View
             $(this).closest('.control-group, form').removeClass 'focus'
 
         do ( el = $(".content-10") ) ->
-            console.log el
+
             $(window).resize ->
 
                 if not $("> img", el).hasClass("ani-processed")
-                    console.log
+
                     el.data "scrollPos", el.offset().top - $(window).height() + el.outerHeight() - parseInt(el.css("padding-bottom"), 10)
 
             .scroll ->
@@ -67,6 +69,43 @@ class AppView extends Backbone.View
             $("html").addClass "loaded"
             $(window).resize().scroll()
             return
+
+
+
+class LocationsView extends Backbone.View
+
+    el: '#content'
+
+    initialize: ->
+        console.log "init loc view"
+
+        @render =>
+            console.log @$el
+            @$('#locations-map').mapster
+                fillOpacity: 0.5
+                render_highlight: {
+                    fillColor: '303AA6'
+                    stroke: true
+                }
+                render_select: {
+                    fillColor: 'ff000c'
+                    stroke: false
+                }
+                fadeInterval: 50,
+                mapKey: 'data-key'
+
+
+    render : ( cb ) ->
+        $.get "./app/locations.html", ( data ) =>
+            template = _.template data , {}
+
+            @$el.html template
+            cb?()
+
+
+
+
+
 
 
 window.AppView = new AppView()
