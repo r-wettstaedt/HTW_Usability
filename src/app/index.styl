@@ -1,4 +1,27 @@
 
 
 // injector
+@import '../components/languageChooser/languageChooser.styl';
 // endinjector
+
+
+[layout-align="center center"], [layout-align="start center"], [layout-align="end center"], [layout-align="space-between center"], [layout-align="space-around center"]
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+
+[layout-align="center"], [layout-align="center center"], [layout-align="center start"], [layout-align="center end"] 
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+
+[layout=vertical] 
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  flex-direction: column
+
+[layout] 
+  box-sizing: border-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
