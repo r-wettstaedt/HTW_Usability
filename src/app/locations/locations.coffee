@@ -28,10 +28,11 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
     initMapster: ->
 
         @$('#locations-map').mapster
-            singleSelect: true
             fillOpacity  : 0.8
+            listSelectedClass: "country-selected"
             fadeInterval : 50
             mapKey : 'data-key'
+            singleSelect: true
             render_highlight:
                 fillColor: 'f1c40f'
                 stroke: false
