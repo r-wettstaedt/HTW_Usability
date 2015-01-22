@@ -28,6 +28,7 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
     initMapster: ->
 
         @$('#locations-map').mapster
+            singleSelect: true
             fillOpacity  : 0.8
             fadeInterval : 50
             mapKey : 'data-key'
