@@ -18,7 +18,6 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
             @states = states
         @getLanguages.done ( languages ) =>
             @languages = languages
-            console.log @languages
 
     render: ->
         @template.done ( tmpl ) =>
