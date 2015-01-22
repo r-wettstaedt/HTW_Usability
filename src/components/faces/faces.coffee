@@ -33,13 +33,14 @@ window.Usability.Widgets.FacesWidget = class CalendarView extends Backbone.View
 
 
     initialize: ->
-        console.log "init"
+
         @render()
 
     render: ->
-        console.log "render", @data
+
         @template.done ( tmpl ) =>
 
+            @data.people = _.shuffle @data.people
 
             @$el.html (_.template tmpl) @data
 
