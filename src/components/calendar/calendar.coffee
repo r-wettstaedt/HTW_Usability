@@ -12,6 +12,11 @@ window.Usability.Views.CalendarView = class CalendarView extends Backbone.View
     options :
         language      : 'de-DE'
         tmpl_path     : "./components/calendar/tmpls/"
+        views:
+            year  : enable: 1
+            month : enable: 1
+            week  : enable: 0
+            day   : enable: 0
 
 
     filter :
