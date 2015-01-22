@@ -13,6 +13,9 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
     selectedState : ''
     data          : {}
 
+    events        :
+        'click a' : 'courseSelected'
+
     initialize: ->
         @getStates.done ( states ) =>
             @states = states
@@ -28,3 +31,6 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
 
     getCountryFromCode: ( code ) ->
         @languages[code]
+
+    courseSelected: ( e ) ->
+        @trigger 'courseSelected', e.currentTarget.getAttribute 'data-id'

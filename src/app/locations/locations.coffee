@@ -12,6 +12,8 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
     initialize: ->
         @render()
         @info = new Usability.Views.LocationsInfoView()
+        @info.on 'courseSelected', ( course ) =>
+            @trigger 'courseSelected', course
 
     render: ->
         @template.done ( tmpl ) =>

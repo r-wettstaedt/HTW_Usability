@@ -1,5 +1,5 @@
 window.Usability ?= {}
-window.Usability.View ?= {}
+window.Usability.Views ?= {}
 window.Usability.Views.AppView = class AppView extends Backbone.View
 
     el: 'body'
@@ -13,6 +13,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @render 'main'
 
+        @c  = new Usability.Views.CourseView()
         @lc = new Usability.Views.LanguageChooserView()
         @lc.on 'language', ( country ) ->
 
@@ -20,7 +21,9 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
     render: ( view ) ->
 
         if view is 'locations'
-            new Usability.Views.LocationsView()
+            @l = new Usability.Views.LocationsView()
+            @l.on 'courseSelected', ( course ) =>
+                @c.render course
 
         if view is 'main'
             new Usability.Views.MainView()
