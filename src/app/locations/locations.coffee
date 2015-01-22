@@ -16,7 +16,7 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
 
     render: ->
         @template.done ( tmpl ) =>
-            console.log "now"
+
             @$el.html (_.template tmpl) @data
             @initMapster()
 

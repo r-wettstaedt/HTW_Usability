@@ -19,4 +19,4 @@ window.Usability.Views.EventsView = class EventsView extends Backbone.View
 
             @$el.html (_.template tmpl) @data
 
-
+            @calendar = new Usability.Views.CalendarView el: $('#calendar')
