@@ -1,10 +1,10 @@
 window.Usability ?= {}
 window.Usability.Views ?= {}
-window.Usability.Views.EventsView = class EventsView extends Backbone.View
+window.Usability.Views.FaqView = class EventsView extends Backbone.View
 
     el: '#content'
 
-    template: $.get "./app/events/events.html"
+    template: $.get "./app/faq/faq.html"
 
     events: {}
 
@@ -19,4 +19,3 @@ window.Usability.Views.EventsView = class EventsView extends Backbone.View
 
             @$el.html (_.template tmpl) @data
 
-            @calendar = new Usability.Views.CalendarView el: $('#calendar')

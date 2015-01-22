@@ -4,6 +4,7 @@
   "dependencies": {
     "bootstrap": "~3.3.1",
     "backbone": "~1.1.2",
-    "imagemapster": "*"
+    "imagemapster": "*",
+    "bootstrap-calendar": "~0.2.4"
   }
 }

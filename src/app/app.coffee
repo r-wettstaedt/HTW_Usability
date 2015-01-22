@@ -31,6 +31,9 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         if view is 'events'
             new Usability.Views.EventsView()
 
+        if view is 'faq'
+            new Usability.Views.FaqView()
+
     handleNavigation : ( e ) ->
 
         $('ul.nav a.active').removeClass "active"
