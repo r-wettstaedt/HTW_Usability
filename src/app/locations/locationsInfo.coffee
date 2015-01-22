@@ -11,7 +11,6 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
     languages     : []
     states        : {}
     selectedState : ''
-    data          : {}
 
     initialize: ->
         @getStates.done ( states ) =>
@@ -21,10 +20,16 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
 
     render: ->
         @template.done ( tmpl ) =>
-            @data = @states[@selectedState]
-            @data.getCountryFromCode = @getCountryFromCode
-            @data.languages = @languages
-            @$el.html (_.template tmpl) @data
 
-    getCountryFromCode: ( code ) ->
+            # bind to this to access this.getCourseFromCode without appending it to data object
+            _render = _.template( tmpl ).bind( @ )
+
+            data = @states[@selectedState]
+            #data.getCourseFromCode = @getCourseFromCode
+            data.languages = @languages
+
+            # AND to access @selected state in template :)
+            @$el.html _render data
+
+    getCourseFromCode: ( code ) ->
         @languages[code]
