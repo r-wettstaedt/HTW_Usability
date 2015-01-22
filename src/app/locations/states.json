@@ -1,0 +1,82 @@
+{
+    "BW": {
+        "name": "Baden-Württemberg",
+        "address": "Reeperbahn 62, 18307 Ribnitz-Damgarten",
+        "courses": ["de", "en", "es", "kl"]
+    },
+    "BY": {
+        "name": "Bayern",
+        "address": "Bleibtreustraße 28, 79774 Albbruck",
+        "courses": ["en", "es", "kl", "pd"]
+    },
+    "BE": {
+        "name": "Berlin",
+        "address": "Waßmannsdorfer Chaussee 94, 15728 Eichwalde",
+        "courses": ["ru", "kl", "pd"]
+    },
+    "BB": {
+        "name": "Brandenburg",
+        "address": "Meinekestraße 21, 37176 Nörten-Hardenberg",
+        "courses": ["fr", "es", "pd"]
+    },
+    "HB": {
+        "name": "Bremen",
+        "address": "Ellmenreichstrasse 57, 91358 Kunreuth",
+        "courses": ["fr", "ru", "pd"]
+    },
+    "HH": {
+        "name": "Hamburg",
+        "address": "Schönwalder Allee 62, 24364 Holzdorf",
+        "courses": ["fr", "ru", "pd"]
+    },
+    "HE": {
+        "name": "Hessen",
+        "address": "Landhausstraße 45, 15872 Eisenhüttenstadt",
+        "courses": ["de", "es", "kl"]
+    },
+    "MV": {
+        "name": "Mecklenburg-Vorpommern",
+        "address": "Charlottenstrasse 18, 03001 Cottbus",
+        "courses": ["es", "fr", "pd"]
+    },
+    "NI": {
+        "name": "Niedersachsen",
+        "address": "Stresemannstr. 89, 66593 St Wendel",
+        "courses": ["pd", "fr", "ru"]
+    },
+    "NW": {
+        "name": "Nordrhein-Westfalen",
+        "address": "Lietzenburger Straße 65, 29584 Himbergen",
+        "courses": ["ru", "fr", "de"]
+    },
+    "RP": {
+        "name": "Rheinland-Pfalz",
+        "address": "Hans-Grade-Allee 51, 24855 Bollingstedt",
+        "courses": ["en", "fr", "kl"]
+    },
+    "SL": {
+        "name": "Saarland",
+        "address": "Neuer Jungfernstieg 18, 85408 Gammelsdorf",
+        "courses": ["de", "fr", "es"]
+    },
+    "SN": {
+        "name": "Sachsen",
+        "address": "Storkower Strasse 78, 56294 Wierschem",
+        "courses": ["de", "fr", "es"]
+    },
+    "ST": {
+        "name": "Sachsen-Anhalt",
+        "address": "Flotowstr. 39, 06758 Wolfen",
+        "courses": ["by", "fr", "de"]
+    },
+    "SH": {
+        "name": "Schleswig-Holstein",
+        "address": "Jahnstrasse 92, 83128 Halfing",
+        "courses": ["es", "de", "kl"]
+    },
+    "TH": {
+        "name": "Thüringen",
+        "address": "An der Schillingbrucke 87, 88453 Erolzheim",
+        "courses": ["es", "fr", "de"]
+    }
+}

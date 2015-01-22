@@ -1,0 +1,17 @@
+<div id="language-chooser-content">
+    <section>
+        <h1>Welcome to SLS</h1>
+        <h5>Your Language School</h5>
+    </section>
+    <section>
+        <h4>Select your language:</h4>
+        <div layout="row" layout-align="center center">
+            <% for(var i=0;i < countries.length; i++){ c = countries[i]%>
+
+                <img src="assets/images/icon-<%= c  %>.png" alt="<%= c %>" class="flag"/>
+            <% } %>
+        </div>
+
+
+    </section>
+</div>

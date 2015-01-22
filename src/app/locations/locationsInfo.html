@@ -1,0 +1,27 @@
+<div class="location-info-wrapper">
+    <address>
+        <h3><strong>Sprachzentrum <%= name %></strong></h3>
+
+        <br>
+
+        <%= address.split(',')[0] %><br>
+        <%= address.split(',')[1] %><br>
+
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+
+    </address>
+
+    <strong>Kurse</strong>
+
+    <ul class="list-unstyled">
+        <% for( var i = 0; i < courses.length; i++ ) { var c = courses[i] %>
+            <li>
+                <a href='#' data-id='<%= c %>'><%= this.getCourseFromCode(c) %></a>
+            </li>
+        <% } %>
+    </ul>
+
+    <a href="#events?location=<%= this.selectedState %>">
+        <strong>Events</strong>
+    </a>
+</div>

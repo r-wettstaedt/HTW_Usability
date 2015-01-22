@@ -1,8 +1,64 @@
 
 
 // injector
-@import '../components/languageChooser/languageChooser.styl';
+
 // endinjector
+
+#language-chooser
+    opacity: 0.8
+    position: fixed
+    height: 100vh
+    width: 100vw
+    top: 0
+    left: 0
+    z-index: 99
+    color: white !important
+    background-color: black
+
+
+// Select through id to overwrite flat-ui stuff without !important
+#top-nav .nav-link, #bottom-nav .nav-link
+    color: #bdc3c7
+
+    &.active, &:active, &:hover, &:focus
+        color: #3498db
+
+
+
+.row + .row
+    margin-top: 20px
+
+
+.face
+    margin-bottom: 40px
+    padding: 0 40px
+    text-align: center
+
+    blockquote:before
+        display: none
+
+    footer
+        text-align: right
+
+    p
+        text-align: left
+
+    img
+        border-radius: 150px
+
+
+/*#language-chooser-content*/
+    /*width: 600px*/
+    /*background-color: #EEE*/
+
+.flag
+    cursor: pointer
+    padding: 10px
+    
+
+address {
+    margin: 30px 0
+}
 
 
 [layout-align="center center"], [layout-align="start center"], [layout-align="end center"], [layout-align="space-between center"], [layout-align="space-around center"]
@@ -10,17 +66,17 @@
   -ms-flex-align: center
   align-items: center
 
-[layout-align="center"], [layout-align="center center"], [layout-align="center start"], [layout-align="center end"] 
+[layout-align="center"], [layout-align="center center"], [layout-align="center start"], [layout-align="center end"]
   -webkit-justify-content: center
   -ms-flex-pack: center
   justify-content: center
 
-[layout=vertical] 
+[layout=vertical]
   -webkit-flex-direction: column
   -ms-flex-direction: column
   flex-direction: column
 
-[layout] 
+[layout]
   box-sizing: border-box
   display: -webkit-flex
   display: -ms-flexbox
