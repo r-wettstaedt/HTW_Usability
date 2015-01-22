@@ -107,6 +107,9 @@ class LocationsView extends Backbone.View
 
     template: $.get "./app/standorte.html"
 
+    events: 
+        'click [data-key]': 'selectLocation'
+
     initialize: -> @render()
 
     render: ->
@@ -114,6 +117,10 @@ class LocationsView extends Backbone.View
             console.log "now"
             @$el.html (_.template tmpl), {}
             @initMapster()
+
+
+    selectLocation: ( e ) ->
+        console.log e.currentTarget.getAttribute 'data-key'
 
 
     initMapster: ->
