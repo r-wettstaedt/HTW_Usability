@@ -12,7 +12,7 @@
   <ul class="list-unstyled">
     <% for( var i = 0; i < courses.length; i++ ) { var l = courses[i] %>
       <li>
-        <a href="#"><%= l %></a>
+        <a href="#"><%= getCountryFromCode(l) %></a>
       </li>
     <% } %>
   </ul>
