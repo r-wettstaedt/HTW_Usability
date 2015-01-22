@@ -1,0 +1,100 @@
+[
+{
+    "BW":  {
+    "name": "Baden-Württemberg",
+    "address": "Reeperbahn 62 18307 Ribnitz-Damgarten",
+    "courses": ["Deutsch", "Englisch", "Spanisch", "Klingonische"]
+    }
+},{
+    "BY":  {
+    "name": "Bayern",
+     "address": "Bleibtreustraße 28, 79774 Albbruck",
+     "courses": ["Englisch", "Spanisch", "Klingonische","Plattdeutsch"]
+    }
+},{
+    "BE":  {
+    "name": "Berlin",
+    "address": "Waßmannsdorfer Chaussee 94, 15728 Eichwalde",
+    "courses": ["Russisch", "Klingonische", "Plattdeutsch"]
+    }
+},{
+    "BB":  {
+    "name": "Brandenburg",
+    "address": "Meinekestraße 21, 37176 Nörten-Hardenberg",
+     "courses": ["Französisch", "Spanisch","Plattdeutsch"]
+    }
+},{
+    "HB":  {
+    "name": "Bremen",
+    "address": "Ellmenreichstrasse 57, 91358 Kunreuth",
+    "courses": ["Französisch", "Russisch","Plattdeutsch"]
+    }
+},{
+    "HH":  {
+    "name": "Hamburg",
+    "address": "Schönwalder Allee 62, 24364 Holzdorf",
+    "courses": ["Französisch", "Russisch","Plattdeutsch"]
+    }
+},{
+    "HE":  {
+    "name": "Hessen",
+    "address": "Landhausstraße 45, 15872 Eisenhüttenstadt",
+    "courses": ["Deutsch", "Spanisch","Klingonische"]
+    }
+},{
+    "MV":  {
+    "name": "Mecklenburg-Vorpommern",
+    "address": "Charlottenstrasse 18, 03001 Cottbus",
+    "courses": ["Spanisch", "Französisch","Plattdeutsch"]
+    }
+},{
+    "NI":  {
+    "name": "Niedersachsen",
+    "address": "Stresemannstr. 89, 66593 St Wendel",
+     "courses": ["Plattdeutsch", "Französisch","Russisch"]
+    }
+},{
+    "NW":  {
+    "name": "Nordrhein-Westfalen",
+    "address": "Lietzenburger Straße 65, 29584 Himbergen",
+     "courses": ["Russisch", "Französisch","Deutsch"]
+    }
+},{
+    "RP":  {
+    "name": "Rheinland-Pfalz",
+    "address": "Hans-Grade-Allee 51, 24855 Bollingstedt",
+     "courses": ["Englisch", "Französisch","Klingonische"]
+    }
+},{
+    "SL":  {
+    "name": "Saarland",
+    "address": "Neuer Jungfernstieg 18, 85408 Gammelsdorf",
+    "courses": ["Deutsch", "Französisch","Spanisch"]
+    }
+},{
+    "SN":  {
+    "name": "Sachsen",
+    "address": "Storkower Strasse 78, 56294 Wierschem",
+    "courses": ["Deutsch", "Französisch","Spanisch"]
+    }
+},{
+    "ST":  {
+    "name": "Sachsen-Anhalt",
+    "address": "Flotowstr. 39, 06758 Wolfen",
+    "courses": ["Bayrisch", "Französisch","Deutsch"]
+    }
+}, {
+    "SH":  {
+    "name": "Schleswig-Holstein",
+    "address": "Jahnstrasse 92, 83128 Halfing",
+    "courses": ["Spanisch", "Deutsch","Klingonische"]
+    }
+},{
+    "TH":  {
+    "name": "Thüringen",
+    "address": "An der Schillingbrucke 87, 88453 Erolzheim",
+     "courses": ["Spanisch", "Französisch","Deutsch"]
+    }
+}
+]
+
