@@ -28,6 +28,9 @@ class AppView extends Backbone.View
         if template is 'standorte'
             new LocationsView()
 
+        if template is 'main'
+            new MainView()
+
 #        $.get "./components/#{template}.html", ( data ) ->
 #            template = _.template data , options
 #
@@ -79,39 +82,52 @@ class AppView extends Backbone.View
 
 
 
+
+
+window.hw = class MainView extends Backbone.View
+
+    el: '#content'
+
+    template : $.get "./components/main.html"
+
+    events:
+        "click .flag" : "selectLanguage"
+
+    initialize: ->
+        @render()
+
+    render: ->
+        @template.done ( tmpl ) =>
+            @$el.html (_.template tmpl), {}
+
+
 class LocationsView extends Backbone.View
 
     el: '#content'
 
-    events:
-        "click [data-key]": "selectLocation"
+    template: $.get "./app/standorte.html"
 
-    initialize: ->
-        @render =>
-            @$('#locations-map').mapster
-                fillOpacity: 0.5
-                render_highlight: {
-                    fillColor: '303AA6'
-                    stroke: true
-                }
-                render_select: {
-                    fillColor: 'ff000c'
-                    stroke: false
-                }
-                fadeInterval: 50,
-                mapKey: 'data-key'
+    initialize: -> @render()
+
+    render: ->
+        @template.done ( tmpl ) =>
+            console.log "now"
+            @$el.html (_.template tmpl), {}
+            @initMapster()
 
 
-    selectLocation: ( e ) ->
+    initMapster: ->
 
-        console.log e.currentTarget.getAttribute 'data-key'
-
-    render : ( cb ) ->
-        $.get "./app/locations.html", ( data ) =>
-            template = _.template data , {}
-
-            @$el.html template
-            cb?()
+        @$('#locations-map').mapster
+            fillOpacity  : 0.5
+            fadeInterval : 50
+            mapKey : 'data-key'
+            render_highlight:
+                fillColor: '303AA6'
+                stroke: true
+            render_select:
+                fillColor: 'ff000c'
+                stroke: false
 
 
 
@@ -119,30 +135,24 @@ class LanguageChooserView extends Backbone.View
 
     el: '#language-chooser'
 
-    template : null
+    template: $.get "./components/languageChooser.html"
 
     events:
         "click .flag" : "selectLanguage"
 
+    data:
+        countries: ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
+
     initialize: ->
 
+        @render()
         @$el.remove()
 
-        $.get "./components/languageChooser.html", ( data ) =>
-            @template = _.template data
-            @show()
 
-        this.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
+    render: ->
 
-
-
-    render : ( cb ) ->
-
-        @$el.html @template countries: @countries
-
-        cb?()
-
-
+        @template.done ( tmpl ) =>
+            @$el.html (_.template tmpl) @data
 
     show : ->
         @$el.fadeIn 50
