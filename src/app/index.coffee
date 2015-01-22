@@ -83,11 +83,11 @@ class LocationsView extends Backbone.View
 
     el: '#content'
 
-    initialize: ->
-        console.log "init loc view"
+    events:
+        "click [data-key]": "selectLocation"
 
+    initialize: ->
         @render =>
-            console.log @$el
             @$('#locations-map').mapster
                 fillOpacity: 0.5
                 render_highlight: {
@@ -101,6 +101,10 @@ class LocationsView extends Backbone.View
                 fadeInterval: 50,
                 mapKey: 'data-key'
 
+
+    selectLocation: ( e ) ->
+
+        console.log e.currentTarget.getAttribute 'data-key'
 
     render : ( cb ) ->
         $.get "./app/locations.html", ( data ) =>
