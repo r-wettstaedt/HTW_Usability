@@ -13,6 +13,10 @@ class AppView extends Backbone.View
         @render "main", =>
             @initMainPage()
 
+            lc = new LanguageChooserView()
+            lc.on 'language', ( country ) ->
+                console.log country
+
 
     render: ( template, options = {}, cb ) ->
 
@@ -28,7 +32,7 @@ class AppView extends Backbone.View
 #
 #            $('#content').html template
 #            cb?()
-
+        cb?()
 
 
     handleNavigation : ( e ) ->
@@ -49,6 +53,8 @@ class AppView extends Backbone.View
         do ( el = $(".content-10") ) ->
 
             $(window).resize ->
+
+                return unless el?.length
 
                 if not $("> img", el).hasClass("ani-processed")
 
@@ -101,6 +107,45 @@ class LocationsView extends Backbone.View
 
             @$el.html template
             cb?()
+
+
+
+class LanguageChooserView extends Backbone.View
+
+    el: '#language-chooser'
+
+    template : null
+
+    events:
+        "click .flag" : "selectLanguage"
+
+    initialize: ->
+
+        $.get "./components/languageChooser.html", ( data ) =>
+            @template = _.template data
+            @show()
+
+        this.countries = ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
+
+
+
+    render : ( cb ) ->
+
+        @$el.html @template countries: @countries
+
+        cb?()
+
+
+
+    show : ->
+        @$el.fadeIn 50
+        @render()
+
+
+    selectLanguage : ( e ) ->
+
+        @$el.fadeOut 500
+        @trigger 'language', e.currentTarget.getAttribute("alt")
 
 
 

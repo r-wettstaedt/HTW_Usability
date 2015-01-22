@@ -1,8 +1,28 @@
 
 
 // injector
-@import '../components/languageChooser/languageChooser.styl';
+
 // endinjector
+
+#language-chooser
+    opacity: 0.8
+    position: fixed
+    height: 100vh
+    width: 100vw
+    top: 0
+    left: 0
+    z-index: 99
+    color: white !important
+    background-color: black
+
+
+/*#language-chooser-content*/
+    /*width: 600px*/
+    /*background-color: #EEE*/
+
+.flag
+    cursor: pointer
+    padding: 10px
 
 
 [layout-align="center center"], [layout-align="start center"], [layout-align="end center"], [layout-align="space-between center"], [layout-align="space-around center"]
@@ -10,17 +30,17 @@
   -ms-flex-align: center
   align-items: center
 
-[layout-align="center"], [layout-align="center center"], [layout-align="center start"], [layout-align="center end"] 
+[layout-align="center"], [layout-align="center center"], [layout-align="center start"], [layout-align="center end"]
   -webkit-justify-content: center
   -ms-flex-pack: center
   justify-content: center
 
-[layout=vertical] 
+[layout=vertical]
   -webkit-flex-direction: column
   -ms-flex-direction: column
   flex-direction: column
 
-[layout] 
+[layout]
   box-sizing: border-box
   display: -webkit-flex
   display: -ms-flexbox
