@@ -28,13 +28,13 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
     initMapster: ->
 
         @$('#locations-map').mapster
-            fillOpacity  : 0.5
+            fillOpacity  : 0.8
             fadeInterval : 50
             mapKey : 'data-key'
             render_highlight:
-                fillColor: '303AA6'
-                stroke: true
+                fillColor: 'f1c40f'
+                stroke: false
             render_select:
-                fillColor: 'ff000c'
+                fillColor: '3498db'
                 stroke: false
 
