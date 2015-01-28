@@ -16,12 +16,12 @@
     <ul class="list-unstyled">
         <% for( var i = 0; i < courses.length; i++ ) { var c = courses[i] %>
             <li>
-                <a href='#' data-id='<%= c %>'><%= this.getCourseFromCode(c) %></a>
+                <a href='#locations/<%= code %>/<%= c %>' data-id='<%= c %>'><%= this.getCourseFromCode(c) %></a>
             </li>
         <% } %>
     </ul>
 
-    <a href="#events?location=<%= this.selectedState %>">
+    <a href="#events/<%= code %>">
         <strong>Events</strong>
     </a>
 </div>

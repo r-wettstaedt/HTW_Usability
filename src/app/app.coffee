@@ -4,16 +4,10 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
     el: 'body'
 
-    events:
-        "click a.nav-link" : 'handleNavigation'
-
     initialize: ->
-        _.bindAll @, "handleNavigation"
 
+        @initRouter()
 
-        @render 'main'
-
-        @c  = new Usability.Views.CourseView()
         @lc = new Usability.Views.LanguageChooserView()
         @lc.on 'language', ( country ) ->
 
@@ -23,43 +17,54 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         $('#bottom-nav').append( clone ).find('ul').removeClass "nav"
 
 
+    initRouter: ->
 
-    render: ( view ) ->
+        @router = new Usability.Router()
 
-        if view is 'locations'
+        Backbone.history.start()
+
+        @router.on 'route:default', ->
+            new Usability.Views.MainView()
+
+        @router.on 'route:locations', =>
             @l = new Usability.Views.LocationsView()
-            @l.on 'courseSelected', ( course ) =>
-                @c.render course
+            @l.on 'stateSelected', ( state ) =>
+                @router.navigate "locations/#{state}", trigger: true
 
-        if view is 'main'
-            new Usability.Views.MainView()
+        @router.on 'route:location', ( state ) =>
+            @li = new Usability.Views.LocationsInfoView state
 
-        if view is 'trips'
-            new Usability.Views.MainView()
+        @router.on 'route:course', ( state, language ) ->
+            new Usability.Views.CourseView state, language
 
-        if view is 'events'
+        @router.on 'route:calendar', ->
+            new Usability.Views.EventsView()
+        
+        @router.on 'route:events', ->
             new Usability.Views.EventsView()
 
-        if view is 'faq'
+        @router.on 'route:trips', ->
+            new Usability.Views.TripsView()
+
+        @router.on 'route:faq', ->
             new Usability.Views.FaqView()
 
-        _.defer ->
-            for el in $(".faces-widget")
-                new Usability.Widgets.FacesWidget el : el
+        # NOT WORKING?!
+        # @router.navigate Backbone.history.fragment, trigger: true
+        @router.navigate '#', trigger: true
 
 
-    handleNavigation : ( e ) ->
+window.Usability.Router = class Router extends Backbone.Router
 
-        $links = $('a.nav-link')
-        $links.removeClass "active"
-
-        view = e.currentTarget.getAttribute("data-view")
-
-        for l in $links when l.getAttribute("data-view") is view
-            l.classList.add "active"
-
-        if view
-            @render view
+    routes: 
+        '': 'default'
+        'locations': 'locations'
+        'locations/:state': 'location'
+        'locations/:state/:language': 'course'
+        'events': 'calendar'
+        'events/:state': 'events'
+        'trips': 'trips'
+        'faq': 'faq'
 
 
 $ ->

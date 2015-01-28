@@ -1,6 +1,6 @@
 window.Usability ?= {}
 window.Usability.Views ?= {}
-window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.View
+window.Usability.Views.LocationsInfoView = class LocationsInfoView extends Backbone.View
 
     el            : '#locations-info'
 
@@ -9,32 +9,30 @@ window.Usability.Views.LocationsInfoView = class LocationsView extends Backbone.
     getLanguages  : $.get './app/languages.json'
 
     languages     : []
-    states        : {}
-    selectedState : ''
+    selectedState : {}
 
-    events        :
-        'click a' : 'courseSelected'
+    initialize: ( state ) ->
 
-    initialize: ->
         @getStates.done ( states ) =>
-            @states = states
-        @getLanguages.done ( languages ) =>
-            @languages = languages
+            @selectedState = states[state]
+            @selectedState.code = state
+
+            @getLanguages.done ( languages ) =>
+                @languages = languages
+
+                @render()
 
     render: ->
         @template.done ( tmpl ) =>
             # bind to this to access this.getCourseFromCode without appending it to data object
             _render = _.template( tmpl ).bind( @ )
 
-            data = @states[@selectedState]
+            data = @selectedState
             #data.getCourseFromCode = @getCourseFromCode
             data.languages = @languages
 
             # AND to access @selected state in template :)
             @$el.html _render data
-
-    courseSelected: ( e ) ->
-        @trigger 'courseSelected', e.currentTarget.getAttribute 'data-id'
 
     getCourseFromCode: ( code ) ->
         @languages[code]

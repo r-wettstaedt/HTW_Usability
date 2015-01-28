@@ -11,9 +11,6 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
 
     initialize: ->
         @render()
-        @info = new Usability.Views.LocationsInfoView()
-        @info.on 'courseSelected', ( course ) =>
-            @trigger 'courseSelected', course
 
     render: ->
         @template.done ( tmpl ) =>
@@ -23,8 +20,7 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
 
     selectLocation: ( e ) ->
         state = e.currentTarget.getAttribute 'data-key'
-        @info.selectedState = state
-        @info.render()
+        @trigger 'stateSelected', state
 
 
     initMapster: ->
