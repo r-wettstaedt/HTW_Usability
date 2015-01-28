@@ -4,7 +4,21 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>STANDORT</h3>
-                <p>INFOS UN VERBINDLICHE ANMELDUNG</p>
+                <p>INFOS UNVERBINDLICHE ANMELDUNG</p>
+
+                <dl class="dl-horizontal">
+                    <dt>Lehrer</dt>
+                    <dd><%= courseInfo.docentname %></dd>
+
+                    <dt>Email</dt>
+                    <dd><a href="mailto:<%= courseInfo.email %>"><%= courseInfo.email %></a></dd>
+                    
+                    <dt>Telefon</dt>
+                    <dd><%= courseInfo.phone %></dd>
+                    
+                    <dt>Beschreibung</dt>
+                    <dd><%= courseInfo.textdocent %></dd>
+                </dl>
             </div>
 
             <div class="col-lg-6">
