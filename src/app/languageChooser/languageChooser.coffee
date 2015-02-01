@@ -12,12 +12,12 @@ window.Usability.Views.LanguageChooserView = class LanguageChooserView extends B
     data:
         countries: ['china', 'france', 'germany', 'portugal', 'spain', 'uk']
 
-    initialize: ->
+    initialize: ( options )->
 
         @blurEl = $('.page-wrapper')
 
         @render()
-        # @$el.remove()
+        @$el.remove() if options.disable
 
 
     render: ->
