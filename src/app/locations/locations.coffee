@@ -31,7 +31,6 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
             listSelectedClass: "country-selected"
             fadeInterval : 50
             mapKey : 'data-key'
-            singleSelect: true
             render_highlight:
                 fillColor: 'e74c3c'
                 stroke: false

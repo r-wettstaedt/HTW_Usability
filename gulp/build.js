@@ -8,37 +8,23 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
-gulp.task('partials', ['markups'], function () {
-  return gulp.src([
-    paths.src + '/{app,components}/**/*.html',
-    paths.tmp + '/{app,components}/**/*.html'
-  ])
-    .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true
-    }))
-    .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'angular'
-    }))
-    .pipe(gulp.dest(paths.tmp + '/partials/'));
-});
+gulp.task('partials', function() {
+  gulp.src(paths.src + '/{app,components}/**/*.html')
+  .pipe(gulp.dest(paths.dist));
+})
 
-gulp.task('html', ['inject', 'partials'], function () {
-  var partialsInjectFile = gulp.src(paths.tmp + '/partials/templateCacheHtml.js', { read: false });
-  var partialsInjectOptions = {
-    starttag: '<!-- inject:partials -->',
-    ignorePath: paths.tmp + '/partials',
-    addRootSlash: false
-  };
+gulp.task('json', function() {
+  gulp.src(paths.src + '/{app,components}/**/*.json')
+  .pipe(gulp.dest(paths.dist));
+})
 
+gulp.task('html', ['inject', 'partials', 'json'], function () {
   var htmlFilter = $.filter('*.html');
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
   var assets;
 
   return gulp.src(paths.tmp + '/serve/*.html')
-    .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe(assets = $.useref.assets())
     .pipe($.rev())
     .pipe(jsFilter)

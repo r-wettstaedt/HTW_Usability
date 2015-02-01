@@ -56,7 +56,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
 window.Usability.Router = class Router extends Backbone.Router
 
-    routes: 
+    routes:
         '': 'default'
         'locations': 'locations'
         'locations/:state': 'location'
