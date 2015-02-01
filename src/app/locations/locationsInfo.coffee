@@ -11,9 +11,12 @@ window.Usability.Views.LocationsInfoView = class LocationsInfoView extends Backb
     languages     : []
     selectedState : {}
 
-    initialize: ( state ) ->
+    initialize: ( options ) ->
+
+        state = options.state
 
         @getStates.done ( states ) =>
+
             @selectedState = states[state]
             @selectedState.code = state
 
@@ -23,6 +26,7 @@ window.Usability.Views.LocationsInfoView = class LocationsInfoView extends Backb
                 @render()
 
     render: ->
+
         @template.done ( tmpl ) =>
             # bind to this to access this.getCourseFromCode without appending it to data object
             _render = _.template( tmpl ).bind( @ )

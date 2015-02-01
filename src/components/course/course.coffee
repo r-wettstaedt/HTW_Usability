@@ -13,9 +13,11 @@ window.Usability.Views.CourseView = class LocationsView extends Backbone.View
     language        : ''
     courseInfo      : {}
 
-    initialize: ( state, language ) ->
+    initialize: ( options ) ->
+        language = options.language
+        state    = options.state
 
-        return if !state? and !language?
+        return unless language and state
 
         @getStates.done ( states ) =>
             @state = states[state].name

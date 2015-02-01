@@ -31,10 +31,10 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
                 @router.navigate "locations/#{state}", trigger: true
 
         @router.on 'route:location', ( state ) =>
-            @li = new Usability.Views.LocationsInfoView state
+            @li = new Usability.Views.LocationsInfoView state: state
 
         @router.on 'route:course', ( state, language ) ->
-            new Usability.Views.CourseView state, language
+            new Usability.Views.CourseView state: state, language: language
 
         @router.on 'route:calendar', ->
             new Usability.Views.EventsView()
@@ -50,7 +50,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         # NOT WORKING?!
         # @router.navigate Backbone.history.fragment, trigger: true
-        @router.navigate '#', trigger: true
+
         Backbone.history.start( root: '' )
 
 
