@@ -9,7 +9,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         @initRouter()
 
         @lc = new Usability.Views.LanguageChooserView()
-        @lc.on 'language', ( country ) ->
+        # @lc.on 'language', ( country ) ->
 
 
         # Setup bottom navigation
@@ -58,6 +58,7 @@ window.Usability.Router = class Router extends Backbone.Router
 
     routes:
         '': 'default'
+        'home': 'default'
         'locations': 'locations'
         'locations/:state': 'location'
         'locations/:state/:language': 'course'

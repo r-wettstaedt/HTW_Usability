@@ -4,7 +4,7 @@ window.Usability.Views.LanguageChooserView = class LanguageChooserView extends B
 
     el: '#language-chooser'
 
-    template: $.get "./components/languageChooser.html"
+    template: $.get "./app/languageChooser/languageChooser.html"
 
     events:
         "click .flag" : "selectLanguage"
@@ -17,7 +17,7 @@ window.Usability.Views.LanguageChooserView = class LanguageChooserView extends B
         @blurEl = $('.page-wrapper')
 
         @render()
-        @$el.remove()
+        # @$el.remove()
 
 
     render: ->
