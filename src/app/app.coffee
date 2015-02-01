@@ -21,7 +21,6 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @router = new Usability.Router()
 
-        Backbone.history.start()
 
         @router.on 'route:default', ->
             new Usability.Views.MainView()
@@ -52,6 +51,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         # NOT WORKING?!
         # @router.navigate Backbone.history.fragment, trigger: true
         @router.navigate '#', trigger: true
+        Backbone.history.start( root: '' )
 
 
 window.Usability.Router = class Router extends Backbone.Router
