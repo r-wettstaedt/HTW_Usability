@@ -8,7 +8,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @initRouter()
 
-        @lc = new Usability.Views.LanguageChooserView( disable : true )
+        @lc = new Usability.Views.LanguageChooserView disable : true
         # @lc.on 'language', ( country ) ->
 
 
