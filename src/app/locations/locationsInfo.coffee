@@ -27,16 +27,16 @@ window.Usability.Views.LocationsInfoView = class LocationsInfoView extends Backb
 
     render: ->
 
+
         @template.done ( tmpl ) =>
             # bind to this to access this.getCourseFromCode without appending it to data object
             _render = _.template( tmpl ).bind( @ )
 
             data = @selectedState
-            #data.getCourseFromCode = @getCourseFromCode
-            data.languages = @languages
 
             # AND to access @selected state in template :)
             @$el.html _render data
 
     getCourseFromCode: ( code ) ->
-        @languages[code]
+
+        (_.findWhere @languages, key: code ).name

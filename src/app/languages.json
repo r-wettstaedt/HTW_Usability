@@ -1,10 +1,43 @@
-{
-  "de": "Deutsch",
-  "en": "Englisch",
-  "es": "Spanisch",
-  "ru": "Russisch",
-  "kl": "Klingonisch",
-  "pt": "Plattdeutsch",
-  "fr": "Franzoesisch",
-  "by": "Bayrisch"
-}
+[
+    {
+        "key" : "de",
+        "name" : "Deutsch",
+        "poster" : "german_guy.jpg"
+    },
+    {
+        "key" : "en",
+        "name" : "Englisch",
+        "poster" : "english_bus.jpg"
+    },
+    {
+        "key" : "es",
+        "name" : "Spanisch",
+        "poster" : "spanish_guy.jpeg"
+    },
+    {
+        "key" : "ru",
+        "name" : "Russisch",
+        "poster" : "russian_guy.gif"
+    },
+    {
+        "key" : "kl",
+        "name" : "Klingonisch",
+        "poster" : "klingon_starship.png"
+    },
+    {
+        "key" : "pd",
+        "name" : "Plattdeutsch",
+        "poster" : "plattdeutsch.jpg"
+    },
+    {
+        "key" : "fr",
+        "name" : "Franzoesisch",
+        "poster" : "french_flag.jpg"
+    },
+    {
+        "key" : "by",
+        "name" : "Bayrisch",
+        "poster" : "bavarian_heart.jpg"
+    }
+
+]

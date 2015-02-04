@@ -23,7 +23,7 @@ window.Usability.Views.CourseView = class LocationsView extends Backbone.View
             @state = states[state].name
 
             @getLanguages.done ( languages ) =>
-                @language = languages[language]
+                @language = _.findWhere languages, key: language
 
                 @getCourseInfo.done ( courseInfo ) =>
                     @courseInfo = courseInfo
@@ -32,9 +32,9 @@ window.Usability.Views.CourseView = class LocationsView extends Backbone.View
 
 
     render: ->
-        
-        @template.done ( tmpl ) =>
 
+        @template.done ( tmpl ) =>
+        
             data =
                 state       : @state
                 language    : @language
