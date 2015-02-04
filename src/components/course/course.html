@@ -18,28 +18,46 @@
 
                     <dt>Beschreibung</dt>
                     <dd><%= courseInfo.textdocent %></dd>
+
+                    <dt>Plätze</dt>
+                    <dd><%= courseInfo.registeredParticipants %> / <%= courseInfo.maxParticipants %></dd>
                 </dl>
             </div>
 
             <div class="col-lg-5 col-lg-offset-1">
                 <h4>Anmeldung</h4>
-                <form action="">
+                <form id="signup-form" novalidate>
                     <div class="form-group">
-                        <input placeholder='Vorname *' type="text" class="form-control">
+                        <input id='input-firstname' required placeholder='Vorname *' type="text" value="<%= user.firstname %>" class="form-control">
+                        <% if(user.error.firstname) { %>
+                            <div class="alert alert-danger" role="alert"><%= user.error.firstname %></div>
+                        <% } %>
                     </div>
                     <div class="form-group">
-                        <input placeholder='Nachname *' type="text" class="form-control">
+                        <input id='input-lastname' required placeholder='Nachname *' type="text" value="<%= user.lastname %>" class="form-control">
+                        <% if(user.error.lastname) { %>
+                            <div class="alert alert-danger" role="alert"><%= user.error.lastname %></div>
+                        <% } %>
                     </div>
                     <div class="form-group">
-                        <input placeholder='Email *' type="email" class="form-control">
+                        <input id='input-email' required placeholder='Email *' type="email" value="<%= user.email %>" class="form-control">
+                        <% if(user.error.email) { %>
+                            <div class="alert alert-danger" role="alert"><%= user.error.email %></div>
+                        <% } %>
                     </div>
                     <div class="form-group">
-                        <input placeholder='Telefon' type="tel" class="form-control">
+                        <input id='input-phone' placeholder='Telefon' type="tel" value="<%= user.phone %>" class="form-control">
+                        <% if(user.error.phone) { %>
+                            <div class="alert alert-danger" role="alert"><%= user.error.phone %></div>
+                        <% } %>
                     </div>
-                    <button class="btn btn-default" type="button">Anmelden</button>
+                    <button class="btn btn-default" type="submit">Anmelden</button>
                     &nbsp;
                     <small>* erforderlich</small>
                 </form>
+                <% if(courseInfo.registered) { %>
+                    <div class="alert alert-success" role="alert">Sie haben sich erfolgreich angemeldet.</div>
+                <% } %>
             </div>
         </div>
 
