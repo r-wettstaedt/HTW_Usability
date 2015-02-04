@@ -27,13 +27,11 @@ window.Usability.Views.EventsView = class EventsView extends Backbone.View
 
         events.filter ( e ) =>
 
-            if @filter.course && e.course isnt @filter.course
-                return false
+#            if @filter.course && e.course isnt @filter.course
+#                return false
             if @filter.location && e.location isnt @filter.location
-                console.log 2
                 return false
 
-            console.log 1
             return true
 
     render: ->
@@ -48,7 +46,7 @@ window.Usability.Views.EventsView = class EventsView extends Backbone.View
                 @template.done ( tmpl ) =>
 
 
-                    @$el.html (_.template tmpl) @data
+                    @$el.html (_.template tmpl).bind(this) @data
 
                     calendarData =
                         el: $('#calendar')
@@ -60,3 +58,9 @@ window.Usability.Views.EventsView = class EventsView extends Backbone.View
                     @calendar = new Usability.Views.CalendarView calendarData
 
 
+    getStateFromKey: ( key ) ->
+        @states.responseJSON[ key ].name
+
+    humanizeDate: ( date ) ->
+
+        moment(parseInt( date )).format("DD.MM.")
