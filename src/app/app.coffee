@@ -21,11 +21,16 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @router = new Usability.Router()
 
+        scrollToTop = ->
+            $("html,body").scrollTop(0 )
+
 
         @router.on 'route:default', ->
+            scrollToTop()
             new Usability.Views.MainView()
 
         @router.on 'route:locations', =>
+            scrollToTop()
             @l = new Usability.Views.LocationsView()
             @l.on 'stateSelected', ( state ) =>
                 @router.navigate "locations/#{state}", trigger: true
@@ -37,18 +42,23 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
             new Usability.Views.CourseView state: state, language: language
 
         @router.on 'route:courses', ( state, language ) ->
+            scrollToTop()
             new Usability.Views.CoursesView state: state, language: language
 
         @router.on 'route:calendar', ->
-            new Usability.Views.EventsView()
-
-        @router.on 'route:events', ->
-            new Usability.Views.EventsView()
-
+            scrollToTop()
+            if arguments[0]
+                new Usability.Views.EventsView location: arguments[0]
+            else
+                new Usability.Views.EventsView()
 
 
         @router.on 'route:faq', ->
+            scrollToTop()
             new Usability.Views.FaqView()
+
+
+
 
         # NOT WORKING?!
         # @router.navigate Backbone.history.fragment, trigger: true
@@ -66,7 +76,7 @@ window.Usability.Router = class Router extends Backbone.Router
         'locations/:state': 'location'
         'locations/:state/:language': 'course'
         'events': 'calendar'
-        'events/:state': 'events'
+        'events/:state': 'calendar'
         'faq': 'faq'
 
 

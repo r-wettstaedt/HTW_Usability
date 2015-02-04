@@ -2,11 +2,12 @@ window.Usability ?= {}
 window.Usability.Views ?= {}
 window.Usability.Views.CalendarView = class CalendarView extends Backbone.View
 
-    initialize: ->
+    initialize: ( options ) ->
 
-        @events = $.get './components/calendar/events.json'
+        @data =
+            events : options.eventData
 
-        @events.done @render
+        @render()
 
 
     options :
@@ -19,31 +20,13 @@ window.Usability.Views.CalendarView = class CalendarView extends Backbone.View
             day   : enable: 0
 
 
-    filter :
-        course : null
-        location : null
-
 
     render: =>
 
-        options = _.extend @options, events_source : @getFilteredEvents()
+        options = _.extend @options, events_source : @data.events
 
         @calendar = @$el.calendar @options
 
-
-    getFilteredEvents: =>
-        events = @events.responseJSON.results
-
-        events.filter ( e ) =>
-
-            if @filter.course && e.course isnt @filter.course
-                return false
-            if @filter.location && e.location isnt @filter.location
-                return false
-
-            return true
-
-        events
 
 
     setFilter: ( newFilter ) =>
