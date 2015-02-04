@@ -2,5 +2,7 @@
     "docentname": "Torsten Rüter",
     "email": "trueter@sls.edu",
     "phone": "+49 030 123 456",
-    "textdocent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "textdocent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "maxParticipants": "30",
+    "registeredParticipants": "21"
 }
