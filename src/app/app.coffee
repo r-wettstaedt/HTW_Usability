@@ -34,12 +34,14 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
             @l = new Usability.Views.LocationsView()
             @l.on 'stateSelected', ( state ) =>
                 @router.navigate "locations/#{state}", trigger: true
+            @l.on 'stateDeselected', =>
+                @router.navigate 'locations', trigger: true
 
         @router.on 'route:location', ( state ) =>
             if @l?
                 @li = new Usability.Views.LocationsInfoView state: state
             else
-                @router.navigate "locations", trigger: true
+                @router.navigate 'locations', trigger: true
 
         @router.on 'route:course', ( state, language ) ->
             new Usability.Views.CourseView state: state, language: language
