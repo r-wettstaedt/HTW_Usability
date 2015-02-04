@@ -42,8 +42,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         @router.on 'route:events', ->
             new Usability.Views.EventsView()
 
-        @router.on 'route:trips', ->
-            new Usability.Views.TripsView()
+
 
         @router.on 'route:faq', ->
             new Usability.Views.FaqView()
@@ -64,7 +63,6 @@ window.Usability.Router = class Router extends Backbone.Router
         'locations/:state/:language': 'course'
         'events': 'calendar'
         'events/:state': 'events'
-        'trips': 'trips'
         'faq': 'faq'
 
 
