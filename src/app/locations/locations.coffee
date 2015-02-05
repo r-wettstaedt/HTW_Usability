@@ -9,6 +9,8 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
     events:
         'click [data-key]': 'selectLocation'
 
+    currentTarget: ''
+
     initialize: ->
         @render()
 
@@ -20,6 +22,12 @@ window.Usability.Views.LocationsView = class LocationsView extends Backbone.View
 
     selectLocation: ( e ) ->
         state = e.currentTarget.getAttribute 'data-key'
+        if @currentTarget is state
+            @currentTarget = ''
+            @trigger 'stateDeselected'
+            return
+
+        @currentTarget = state
         @trigger 'stateSelected', state
 
 
