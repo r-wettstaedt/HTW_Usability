@@ -23,7 +23,7 @@
 
 
                     <% for ( i = 0; i < events.length; i++ ){ e = events[i]; %>
-                        <li><%= e.title %> (<%= this.getStateFromKey(e.location) %> - <%= this.humanizeDate( e.start ) %>)</li>
+                        <li><a href="<%= e.url %>"><%= e.title %> (<%= this.getStateFromKey(e.location) %> - <%= this.humanizeDate( e.start ) %>)</a></li>
                     <% } %>
 
                 </ul>

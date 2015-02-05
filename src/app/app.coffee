@@ -43,6 +43,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
 
         @router.on 'route:course', ( state, language ) ->
             scrollToTop()
+            $('.tooltip').remove()
             new Usability.Views.CourseView state: state, language: language
 
         @router.on 'route:courses', ( state, language ) ->
