@@ -12,10 +12,11 @@ window.Usability.Views.FaqView = class EventsView extends Backbone.View
 
 
     initialize: ->
-        _.defer ->
+        @render()
+        setTimeout ->
             for el in $(".faces-widget")
                 new Usability.Widgets.FacesWidget el : el
-        @render()
+        , 500
 
     render: ->
         @template.done ( tmpl ) =>

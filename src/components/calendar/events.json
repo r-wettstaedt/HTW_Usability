@@ -105,66 +105,6 @@
             "end": "1424979254781",
             "course" : "de",
             "location" : "NI"
-        },
-        {
-            "id": "299",
-            "title": "This is information class ",
-
-            "class": "event-info",
-            "start": "1422237802664",
-            "start": "1423410612312",
-            "course" : "de",
-            "location" : "NI"
-        },
-        {
-            "id": "297",
-            "title": "This is success event",
-
-            "class": "event-success",
-            "start": "1363234500000",
-            "end": "1363284062400",
-            "course" : "de",
-            "location" : "NI"
-        },
-        {
-            "id": "54",
-            "title": "This is simple event",
-
-            "class": "",
-            "start": "1363712400000",
-            "end": "1363716086400",
-            "course" : "de",
-            "location" : "NI"
-        },
-        {
-            "id": "532",
-            "title": "This is inverse event",
-
-            "class": "event-inverse",
-            "start": "1364407200000",
-            "end": "1364493686400",
-            "course" : "de",
-            "location" : "NI"
-        },
-        {
-            "id": "548",
-            "title": "This is special event",
-
-            "class": "event-special",
-            "start": "1363197600000",
-            "end": "1363629686400",
-            "course" : "de",
-            "location" : "NI"
-        },
-        {
-            "id": "295",
-            "title": "Event 3",
-
-            "class": "event-important",
-            "start": "1364320800000",
-            "end": "1364407286400",
-            "course" : "de",
-            "location" : "NI"
         }
     ]
 }

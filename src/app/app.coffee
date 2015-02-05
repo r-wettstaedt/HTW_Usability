@@ -22,7 +22,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
         @router = new Usability.Router()
 
         scrollToTop = ->
-            $("html,body").scrollTop(0 )
+            $("html,body").scrollTop( 0 )
 
 
         @router.on 'route:default', ->
@@ -42,6 +42,7 @@ window.Usability.Views.AppView = class AppView extends Backbone.View
                 @router.navigate "locations", trigger: true
 
         @router.on 'route:course', ( state, language ) ->
+            scrollToTop()
             new Usability.Views.CourseView state: state, language: language
 
         @router.on 'route:courses', ( state, language ) ->
